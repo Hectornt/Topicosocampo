@@ -1,10 +1,10 @@
 # Hilos en java  
   
-### ¿Que es un hilo?  
+## ¿Que es un hilo?  
 Thread (hilo, tarea) es la clase base de Java para definir hilos de ejecución concurrentes dentro de un mismo programa. En Java, como lenguaje O.O., el concepto de concurrencia está asociado a los objetos: Son los objetos los que actúan concurrentemente con otros.  
   
 
-### Implementación  
+## Implementación  
 En Java los hilos están encapsulados en la clase Thread. Para crear un hilo tenemos dos posibilidades:  
 * Heredar de Thread redefiniendo el método run().  
 * Crear una clase que implemente la interfaz Runnable que nos obliga a definir el método run().  
@@ -42,6 +42,8 @@ Para instanciar y ejecutar un hilo de este tipo deberemos hacer lo siguiente:
 ~~~    
 Thread t = new Thread(new EjemploHilo());  
 t.start();
-~~~            
+~~~    
+Esto es así debido a que en este caso EjemploHilo no deriva de una clase Thread, por lo que no se puede considerar un hilo, lo único que estamos haciendo implementando la interfaz es asegurar que vamos a tener definido el método run(). Con esto lo que haremos será proporcionar esta clase al constructor de la clase Thread, para que el objeto Thread que creemos llame al método run() de la clase que hemos definido al iniciarse la ejecución del hilo, ya que implementando la interfaz le aseguramos que esta función existe.    
+           
 
 
